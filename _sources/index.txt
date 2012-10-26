@@ -19,6 +19,17 @@ Table of Contents
    tutorial_pages/*
 
 
+Other Useful Resources
+======================
+- **matplotlib documentation:** http://matplotlib.org/
+  
+  * The `gallery <http://matplotlib.org/gallery.html>`_ shows a very nice set of visual examles.
+  * The `plotting commands summary <http://matplotlib.org/api/pyplot_summary.html>`_ is a very useful reference.
+
+- **scipy lectures:** http://scipy-lectures.github.com/
+
+  * See especially the `matplotlib tutorial <http://scipy-lectures.github.com/intro/matplotlib/matplotlib.html>`_ in these lectures.
+
 Downloads
 =========
 
