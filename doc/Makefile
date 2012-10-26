@@ -42,16 +42,19 @@ notebooks:
 
 html: notebooks
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	touch $(BUILDDIR)/html/.nojekyll
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
 dirhtml: notebooks
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
+	touch $(BUILDDIR)/dirhtml/.nojekyll
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
 
 singlehtml: notebooks
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
+	touch $(BUILDDIR)/singlehtml/.nojekyll
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
 
@@ -141,6 +144,7 @@ deploy: html
 	fi && \
 	cd _build/mpl_tutorial && git checkout gh-pages && \
 	rsync -r ../html/* ./ && \
-	git add * && \
+	touch ./.nojekyll && \
+	git add * .nojekyll && \
 	git commit -a -m 'Make install' && \
 	git push origin gh-pages
