@@ -42,6 +42,12 @@ def strip_notebook(filename, marker='###',
 
 
 def main():
+    if not os.path.exists('notebooks'):
+        os.makedirs('notebooks')
+
+    if not os.path.exists('notebooks_ex'):
+        os.makedirs('notebooks_ex')
+
     for f in os.listdir('notebooks_raw'):
         f_raw = os.path.join('notebooks_raw', f)
         f_clean = os.path.join('notebooks', f)

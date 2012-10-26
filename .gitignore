@@ -3,3 +3,6 @@
 doc/_build
 doc/_static
 doc/examples
+
+notebooks
+notebooks_ex
