@@ -37,7 +37,7 @@ clean:
 	-rm -rf $(BUILDDIR)/*
 
 notebooks:
-	cd ../; python strip_notebooks.py
+	cd ../; make convert_nb
 	cd ../; tar -czvf doc/_static/notebooks.tgz notebooks notebooks_ex 
 
 html: notebooks
