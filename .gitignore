@@ -1,3 +1,5 @@
 *.pyc
 *~
 doc/_build
+doc/_static
+doc/examples
