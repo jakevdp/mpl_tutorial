@@ -6,6 +6,7 @@ import os
 def strip_notebook(filename, marker='###',
                    outfile_live=None, outfile_clean=None):
     if not filename.endswith('.ipynb'):
+        import warnings
         warnings.warn('%s not a notebook file' % filename)
         return
 
