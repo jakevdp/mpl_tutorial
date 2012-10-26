@@ -1,0 +1,178 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Matplotlib Tutorial &mdash; mpl-tutorial 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/astroMLstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="mpl-tutorial 0.1 documentation" href="#" />
+    <link rel="next" title="1. Basic Plotting with Pylab" href="tutorial_pages/tut1.html" />
+<!-- Following code is for Google custom search bar -->
+<script>
+  (function() {
+    var cx = '011400076584591653333:hjd_fbqk1u0';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+<!-- Following code is for toggle/glide features -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$(".toggle_container").hide();
+
+	$(".toggle_trigger").click(function(){
+		$(this).toggleClass("active").next(".toggle_container").slideToggle("fast");
+                return false; <!-- Prevent the link from being followed -->
+	});
+
+        $(".toggle_trigger#start_open").toggleClass("active").next().show();
+
+});
+</script>
+
+<!-- Following code is for Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35748160-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  </head>
+  <body>
+    <div class="header-wrapper"
+      <div class="header">
+          <p class="logo"><a href="#">
+            <img src="_static/Logo.gif" alt="Logo"/>
+          </a>
+          </p><div class="navbar">
+          <ul>
+            <li><a href="#">Home</a></li>
+       </ul>
+
+<!-- Google custom search.  Javascript that enables this is in the header above -->
+<div class="search_form">
+  <gcse:search></gcse:search>
+</div>
+
+          </div> <!-- end navbar --></div>
+    </div>
+
+    <div class="content-wrapper">
+
+    <!-- <div id="blue_tile"></div> -->
+
+        <div class="sphinxsidebar">
+        <h3>Headline</h3>
+
+	<p>October 2012: This tutorial is being taught at 
+	  <a href="http://nyc2012.pydata.org/">PyData NYC 2012</a></p>.
+        
+
+	
+	<!--
+	<h3>Links</h3>
+	<p><a href="https://groups.google.com/forum/#!forum/astroml-general">astroML Mailing List</a></p>
+	<p><a href="http://github.com/astroML/astroML/issues">GitHub Issue Tracker</a>.</p>
+	-->
+        
+	<!--
+        <h3>Funding</h3>
+        <p>Funding provided
+	  by <a href="http://www.astro.washington.edu">
+	    University of Washington</a> and ...</p>
+
+        <p><a href="about.html">Read more ...</a></p>
+	-->
+        
+
+        </div>
+
+      <div class="content">
+            
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="matplotlib-tutorial">
+<h1>Matplotlib Tutorial<a class="headerlink" href="#matplotlib-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>This is a short matplotlib tutorial, centered on the IPython notebook,
+created by Jake Vanderplas for <a class="reference external" href="http://nyc2012.pydata.org/">PyData NYC</a>
+in October 2012.</p>
+<div class="section" id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_pages/tut1.html">1. Basic Plotting with Pylab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_pages/tut2.html">2. Object Oriented Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_pages/tut3.html">3. Various Plotting Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_pages/tut4.html">4. Text and Annotation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_pages/tut5.html">5. 3D Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_pages/tut6.html">6. Animations</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="downloads">
+<h2>Downloads<a class="headerlink" href="#downloads" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference download internal" href="_downloads/notebooks.tgz"><tt class="xref download docutils literal"><span class="pre">notebook</span> <span class="pre">tarball</span></tt></a></li>
+</ul>
+<p>The notebook tarball contains two directories, <cite>notebooks</cite> and <cite>notebooks_ex</cite>.
+<cite>notebooks</cite> is the source of the information on this page: all code is filed-in
+and plots are shown.  <cite>notebooks_ex</cite> are only partially filled-out, and meant
+for interactive use during the live tutorial.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
+    <div class="footer">
+        <p style="text-align: center">This documentation is relative
+        to mpl-tutorial version 0.1<p>
+        &copy; 2012, Jake Vanderplas.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3. Design by <a href="http://webylimonada.com">Web y Limonada</a>.
+    <span style="padding-left: 5ex;">
+    <a href="_sources/index.txt"
+	    rel="nofollow">Show this page source</a>
+    </span>
+    </div>
+  </body>
+</html>
