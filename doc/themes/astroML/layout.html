@@ -73,9 +73,6 @@ $(document).ready(function(){
           <div class="navbar">
           <ul>
             <li><a href="{{pathto(master_doc)}}">Home</a></li>
-	    <li><a href="{{pathto('user_guide/index')}}">User Guide</a></li>
-            <li><a href="{{pathto('book_figures/index')}}">Book Figures</a></li>
-            <li><a href="{{pathto('examples/index')}}">Examples Plots</a></li>
        </ul>
 
 <!-- Google custom search.  Javascript that enables this is in the header above -->
@@ -148,16 +145,15 @@ $(document).ready(function(){
 	</div>
     {%- endif %}
     </div>
+    <!--
     <p style="text-align: center">This documentation is
     for {{project}} <strong>version {{ release|e }}</strong>
-    &mdash; <a href="http://scikit-learn.org/stable/support.html#documentation-resources">Other versions</a></p>
+    &mdash; <a href="http://scikit-learn.org/stable/support.html#documentation-resources">Other versions</a></p> -->
         {% else %}
-        <!--
         <h3>Headline</h3>
 
-	<p>October 2012: astroML 0.1 has been released!  Get the source on
-	   <a href="http://github.com/astroML/astroML">Github</a></p>.
-	-->
+	<p>October 2012: This tutorial is being taught at 
+	  <a href="http://nyc2012.pydata.org/">PyData NYC 2012</a></p>.
         {% endif %}
 
 	{% if pagename != 'index' %}

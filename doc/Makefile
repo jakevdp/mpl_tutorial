@@ -35,23 +35,22 @@ help:
 
 clean:
 	-rm -rf $(BUILDDIR)/*
-	-rm -rf examples/
-	-rm -rf book_figures/
-	-rm -rf paper_figures/
-	-rm -rf doc/generated/*
-	-rm -rf modules/generated/*
 
-html:
+notebooks:
+	cd ../; python strip_notebooks.py
+	cd ../; tar -czvf doc/_static/notebooks.tgz notebooks notebooks_ex 
+
+html: notebooks
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
-dirhtml:
+dirhtml: notebooks
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
 
-singlehtml:
+singlehtml: notebooks
 	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
@@ -133,3 +132,15 @@ doctest:
 	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
 	@echo "Testing of doctests in the sources finished, look at the " \
 	      "results in $(BUILDDIR)/doctest/output.txt."
+
+deploy: html
+	if test -d _build/mpl_tutorial; \
+	then echo "using existing mpl_tutorial directory"; \
+	else cd _build && \
+	git clone git@github.com:jakevdp/mpl_tutorial; \
+	fi && \
+	cd _build/mpl_tutorial && git checkout gh-pages && \
+	rsync -r ../html/* ./ && \
+	git add * && \
+	git commit -a -m 'Make install' && \
+	git push origin gh-pages
